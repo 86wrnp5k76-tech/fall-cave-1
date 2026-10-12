@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100d0b">
+<title>FALL CAVE — Restaurant · Lounge</title>
+<style>
+:root{--bg:#100d0b;--panel:#1c1713;--gold:#d9aa58;--cream:#fff5e6;--muted:#c7b8a5;--line:#493729}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(16px,5vw,70px);background:#100d0bf2;border-bottom:1px solid #493729;position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
+.brand{font-family:Georgia,serif;font-size:25px;letter-spacing:3px;color:var(--gold);font-weight:bold}.brand small{display:block;color:#fff0dc;font:10px Arial;letter-spacing:4px;margin-top:4px}
+nav{display:flex;align-items:center;gap:22px;font-size:14px;color:#f5e7d4}nav a:hover{color:var(--gold)}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:1px solid var(--gold);padding:12px 17px;border-radius:5px;font-weight:bold;color:#17100a;background:var(--gold);transition:.2s}.btn:hover{filter:brightness(1.1);transform:translateY(-1px)}.btn.outline{background:transparent;color:var(--gold)}.btn.whatsapp{background:#1b9b57;border-color:#1b9b57;color:white}
+.hero{min-height:390px;display:flex;align-items:center;padding:70px clamp(20px,8vw,120px);position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(10,7,5,.95) 0%,rgba(10,7,5,.77) 46%,rgba(10,7,5,.22) 100%),url('hero-fall-cave.png') center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:100px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+.hero-content{max-width:650px;position:relative;z-index:1}.eyebrow{color:var(--gold);font-size:12px;letter-spacing:4px;font-weight:bold;text-transform:uppercase}
+h1{font-family:Georgia,serif;font-size:clamp(42px,7vw,78px);line-height:1.02;margin:18px 0;color:#fff5e6}h1 span{color:var(--gold);font-style:italic}.hero p{font-size:18px;line-height:1.7;color:#e0d2c1;max-width:520px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}.location{font-size:13px;color:#d8c5ae;line-height:1.8}
+section{padding:34px clamp(16px,3vw,42px)}.section-head{text-align:center;max-width:700px;margin:0 auto 28px}.section-head h2{font: bold clamp(28px,4vw,42px) Georgia,serif;margin:8px 0 12px}.section-head p{color:var(--muted);line-height:1.6}
+.promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1250px;margin:0 auto}.promo{border:1px solid var(--line);border-radius:10px;padding:22px;background:linear-gradient(135deg,#251a12,#17110d)}.promo strong{display:block;color:var(--gold);font-size:17px;margin:8px 0}.promo p{color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:0}
+.menu-wrap{max-width:1150px;margin:auto}.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:22px 0 28px}.filter{border:1px solid var(--line);color:var(--cream);background:#101719;padding:8px 12px;border-radius:7px;font-size:13px}.filter.active,.filter:hover{background:var(--gold);border-color:var(--gold);color:#170f08}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.product{background:linear-gradient(145deg,#11191b,#0b1012);border:1px solid #574126;border-radius:9px;padding:12px;display:flex;flex-direction:column;min-height:140px}.product .category{color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:2px}.product h3{margin:7px 0;font:bold 17px Georgia,serif}.product .note{color:var(--muted);font-size:13px;flex:1}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}.price{font-weight:bold;color:var(--gold)}.add{border:0;background:var(--gold);color:#1b1208;border-radius:5px;padding:10px 12px;font-weight:bold}
+.cart-box{max-width:850px;margin:0 auto;background:#19130f;border:1px solid var(--line);border-radius:12px;padding:24px}.cart-line{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.cart-line button{background:transparent;border:1px solid #8b6b4b;color:var(--cream);border-radius:4px;padding:4px 9px}.cart-total{display:flex;justify-content:space-between;font-size:20px;font-weight:bold;margin:22px 0}.cart-actions{display:flex;gap:10px;flex-wrap:wrap}.muted{color:var(--muted)}
+.admin{max-width:850px;margin:0 auto;border:1px solid var(--line);border-radius:10px;padding:20px;background:#17110d}.admin summary{cursor:pointer;color:var(--gold);font-weight:bold}.admin-form{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}.admin input,.admin select{width:100%;padding:11px;background:#0f0c0a;color:var(--cream);border:1px solid var(--line);border-radius:5px}.admin .wide{grid-column:1/-1}.admin-list{margin-top:16px}.admin-row{display:flex;align-items:center;gap:8px;border-top:1px solid var(--line);padding:10px 0}.admin-row span{flex:1}
+footer{border-top:1px solid var(--line);padding:30px 18px;text-align:center;color:var(--muted);line-height:1.8;font-size:13px}.floating-wa{position:fixed;right:18px;bottom:18px;z-index:20;box-shadow:0 5px 20px #0008;border-radius:50px;padding:14px 18px}
+.category-section{border:1px solid #493729;border-radius:12px;overflow:hidden;background:#0b1113;margin-bottom:20px}.category-heading{padding:0;background:linear-gradient(100deg,#2a1c11,#111719);border-bottom:1px solid #493729;display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:76px}.category-heading .cat-photo{width:112px;align-self:stretch;flex:0 0 112px;object-fit:cover;max-height:82px;border-right:1px solid #493729}.category-heading .cat-title{display:flex;align-items:center;gap:12px;flex:1;min-width:0;padding:10px 4px}.category-heading h3{margin:0;color:var(--gold);font:italic 22px Georgia,serif}.category-heading span{font-size:12px;color:var(--muted);padding:0 12px;white-space:nowrap}.category-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px;padding:6px 14px}.category-items .product{border:0;border-bottom:1px solid #2c2b27;border-radius:0;background:transparent;min-height:0;padding:12px 3px;display:grid;grid-template-columns:1fr auto;gap:5px 10px}.price-choice{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;margin-top:8px}.chosen-price{background:#100d0b;color:var(--gold);border:1px solid var(--gold);border-radius:5px;padding:6px;max-width:180px}.category-items .product .category{display:none}.category-items .product h3{font:16px Arial,sans-serif;margin:0}.category-items .product .note{grid-column:1/-1;font-size:11px}.category-items .product-bottom{margin:0;grid-column:2;grid-row:1;align-self:center}.category-items .add{padding:5px 9px;border-radius:50%;font-size:16px}.category-items .price{font-size:12px;white-space:nowrap}.hero{min-height:390px}.section-head{margin-bottom:18px}.section-head p{margin:6px 0}@media(max-width:760px){.category-heading .cat-photo{width:86px;flex-basis:86px}.category-heading h3{font-size:19px}.category-heading{min-height:66px}.topbar{flex-wrap:wrap;padding:13px 16px}.brand{font-size:21px}nav{order:3;width:100%;justify-content:space-between;gap:8px;font-size:12px}.topbar>.btn{padding:9px 11px;font-size:12px}.hero{min-height:510px;background-position:60% center}.hero p{font-size:16px}.promo-grid,.products{grid-template-columns:1fr}.category-items{grid-template-columns:1fr}.category-heading h3{font-size:22px}.promo-grid{max-width:500px}.admin-form{grid-template-columns:1fr}.cart-box{padding:16px}.cart-actions .btn{flex:1}.floating-wa{right:12px;bottom:12px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#accueil">FALL CAVE<small>RESTAURANT · LOUNGE</small></a>
+  <nav><a href="#accueil">Accueil</a><a href="#carte">La carte</a><a href="#panier">Panier <span id="cart-count">0</span></a><a href="#contact">Contact</a></nav>
+  <a class="btn whatsapp" id="header-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+</header>
+<main>
+<section class="hero" id="accueil">
+  <div class="hero-content">
+    <div class="eyebrow">Restaurant · Cave à vins · Chicha</div>
+    <h1>Des saveurs généreuses.<br><span>Une ambiance unique.</span></h1>
+    <p>Bienvenue chez FALL CAVE : cuisine gourmande, vins, chichas et moments à partager dans une atmosphère chaleureuse.</p>
+    <div class="hero-actions"><a class="btn" href="#carte">Découvrir la carte ↓</a><a class="btn outline" id="hero-wa" href="#" target="_blank" rel="noopener">Commander sur WhatsApp</a></div>
+    <div class="location">📍 Hêvié Mairie — von en face du terrain de l’arrondissement<br>📞 +229 01 97 74 07 32 · +229 01 95 08 39 37</div>
+  </div>
+</section>
+<section aria-label="Promotions">
+  <div class="section-head"><div class="eyebrow">L'esprit FALL CAVE</div><h2>Vos rendez-vous préférés</h2><p>Une bonne table, une belle ambiance et des offres à découvrir.</p></div>
+  <div class="promo-grid">
+    <article class="promo"><div>🔥</div><strong>JEUDI — SOIRÉE WOLOSSO</strong><p>Ambiance chaude et conviviale chez FALL CAVE.</p></article>
+    <article class="promo"><div>💨</div><strong>DIMANCHE — CHICHA x2</strong><p>Une chicha payée, une chicha offerte.</p></article>
+    <article class="promo"><div>✨</div><strong>SOIRÉES SPÉCIALES</strong><p>Les arômes et offres chicha peuvent varier les soirs d’événement. Demandez les disponibilités sur WhatsApp.</p></article>
+  </div>
+</section>
+<section id="carte">
+  <div class="section-head"><div class="eyebrow">À savourer</div><h2>Notre carte</h2><p>Choisissez vos articles, ajoutez-les au panier et envoyez votre commande directement par WhatsApp.</p></div>
+  <div class="menu-wrap"><div class="filters" id="filters"></div><div class="products" id="products"></div></div>
+</section>
+<section id="panier">
+  <div class="section-head"><div class="eyebrow">Votre sélection</div><h2>Mon panier</h2><p>Vérifiez votre commande avant de nous l’envoyer sur WhatsApp.</p></div>
+  <div class="cart-box"><div id="cart-items" class="muted">Votre panier est vide.</div>
+  <div style="margin:20px 0;display:grid;gap:8px">
+    <label for="order-mode" style="color:var(--gold);font-weight:bold">Comment souhaitez-vous recevoir votre commande ?</label>
+    <select id="order-mode" style="padding:12px;background:#0f0c0a;color:var(--cream);border:1px solid var(--line);border-radius:5px">
+      <option value="À livrer">À livrer</option>
+      <option value="Sur place">Sur place</option>
+    </select>
+    <label for="table-number" id="table-label" style="color:var(--muted)">Numéro de table (1 à 20)</label>
+    <select id="table-number" style="padding:12px;background:#0f0c0a;color:var(--cream);border:1px solid var(--line);border-radius:5px">
+      <option value="">Choisir votre table</option><option value="1">Table 1</option><option value="2">Table 2</option><option value="3">Table 3</option><option value="4">Table 4</option><option value="5">Table 5</option><option value="6">Table 6</option><option value="7">Table 7</option><option value="8">Table 8</option><option value="9">Table 9</option><option value="10">Table 10</option><option value="11">Table 11</option><option value="12">Table 12</option><option value="13">Table 13</option><option value="14">Table 14</option><option value="15">Table 15</option><option value="16">Table 16</option><option value="17">Table 17</option><option value="18">Table 18</option><option value="19">Table 19</option><option value="20">Table 20</option></select>
+    <label for="delivery-address" id="address-label" style="color:var(--muted)">Adresse de livraison</label>
+    <input id="delivery-address" placeholder="Ex. quartier, rue, repère..." style="padding:12px;background:#0f0c0a;color:var(--cream);border:1px solid var(--line);border-radius:5px">
+  </div>
+  <div class="cart-total"><span>Total</span><span id="cart-total">0 FCFA</span></div><div class="cart-actions"><button class="btn whatsapp" id="order-wa">Commander sur WhatsApp</button><button class="btn outline" id="clear-cart">Vider le panier</button></div></div>
+</section>
+<section id="contact">
+  <div class="section-head"><div class="eyebrow">Nous contacter</div><h2>On vous attend chez FALL CAVE</h2><p>Hêvié Mairie — von en face du terrain de l’arrondissement</p><p>📞 +229 01 97 74 07 32 · +229 01 95 08 39 37</p><a class="btn whatsapp" id="contact-wa" href="#" target="_blank" rel="noopener">Discuter sur WhatsApp</a></div>
+</section>
+<section>
+<details class="admin"><summary>⚙ Espace admin — gérer les produits et les prix</summary>
+<p class="muted">Les changements sont enregistrés dans ce navigateur. Cette protection PIN est simple et ne remplace pas une administration sécurisée côté serveur pour un site public.</p>
+<div id="admin-login"><label>Code admin</label><div style="display:flex;gap:8px;margin-top:8px"><input id="pin" type="password" placeholder="Code PIN (par défaut 2468)"><button class="btn" id="login">Ouvrir</button></div></div>
+<div id="admin-panel" hidden>
+<div class="admin-form">
+<select id="new-category"><option>Pizzas</option><option>Shawarmas</option><option>Paninis</option><option>Plats</option><option>Pâtes</option><option>Vins</option><option>Chichas</option><option>Champagnes</option><option>Whiskys</option><option>Bières</option></select>
+<input id="new-name" placeholder="Nom du produit">
+<input id="new-price" type="number" min="0" placeholder="Prix (FCFA)">
+<input id="new-note" placeholder="Note / précision (facultatif)">
+<button class="btn wide" id="add-product">Ajouter un produit</button>
+<button class="btn outline wide" id="export-json">Exporter la carte JSON</button>
+<button class="btn outline wide" id="reset-menu">Réinitialiser la carte initiale</button>
+</div><div class="admin-list" id="admin-list"></div><button class="btn outline" id="logout" style="margin-top:15px">Fermer l’administration</button>
+</div>
+</details>
+</section>
+</main>
+<footer>FALL CAVE · Hêvié Mairie, von en face du terrain de l’arrondissement<br>Restaurant · Lounge · Vins · Chicha · Restauration</footer>
+<a class="btn whatsapp floating-wa" id="float-wa" href="#" target="_blank" rel="noopener">☏ WhatsApp</a>
+<script>
+const WA_NUMBER = "2290197740732"; // Remplacez par le numéro WhatsApp du commerce si nécessaire, format international sans +
+const INITIAL_PRODUCTS = [
+{id:1,category:"Pizzas",name:"Pizza Margherita",price:5000,minPrice:5000,maxPrice:8000,note:"Choisissez votre prix : 5 000 à 8 000 FCFA"},
+{id:2,category:"Pizzas",name:"Pizza 4 saisons",price:5000,minPrice:5000,maxPrice:8000,note:"Choisissez votre prix : 5 000 à 8 000 FCFA"},
+{id:3,category:"Pizzas",name:"Pizza Royale",price:5000,minPrice:5000,maxPrice:8000,note:"Choisissez votre prix : 5 000 à 8 000 FCFA"},
+{id:4,category:"Pizzas",name:"Pizza spéciale FALL CAVE",price:5000,minPrice:5000,maxPrice:8000,note:"Choisissez votre prix : 5 000 à 8 000 FCFA"},
+{id:5,category:"Shawarmas",name:"Shawarma",price:1500,minPrice:1500,maxPrice:2500,note:"Choisissez votre prix : 1 500 à 2 500 FCFA"},
+{id:6,category:"Shawarmas",name:"Shawarma spécial",price:2500,minPrice:1500,maxPrice:2500,note:"Choisissez votre prix : 1 500 à 2 500 FCFA"},
+{id:7,category:"Paninis",name:"Panini",price:2000,minPrice:2000,maxPrice:3000,note:"Choisissez votre prix : 2 000 à 3 000 FCFA"},
+{id:8,category:"Paninis",name:"Panini spécial",price:3000,minPrice:2000,maxPrice:3000,note:"Choisissez votre prix : 2 000 à 3 000 FCFA"},
+{id:9,category:"Plats",name:"Riz aileron",price:2500,note:""},
+{id:10,category:"Plats",name:"Riz viande de mouton",price:3000,note:""},
+{id:11,category:"Plats",name:"Dakououn",price:0,note:"Prix à confirmer auprès de FALL CAVE"},
+{id:12,category:"Plats",name:"Bomiwo",price:0,note:"Prix à confirmer auprès de FALL CAVE"},
+{id:13,category:"Plats",name:"Poisson frit + pâte rouge",price:5000,minPrice:5000,maxPrice:8000,note:"Choisissez votre prix : 5 000 à 8 000 FCFA"},
+{id:14,category:"Pâtes",name:"Pâtes saucisse",price:1000,note:""},
+{id:15,category:"Pâtes",name:"Pâtes ailerons",price:2000,note:""},
+{id:16,category:"Pâtes",name:"Pâtes ailerons et saucisses",price:3000,note:""},
+{id:17,category:"Vins",name:"Cadet du Roi Réservé",price:5000,note:""},
+{id:18,category:"Vins",name:"Duvas de Pias",price:5000,note:""},
+{id:19,category:"Vins",name:"Journée Spéciale Réservé",price:10000,note:""},
+{id:20,category:"Vins",name:"CH Saint Anac BD Blanc",price:15000,note:""},
+{id:21,category:"Chichas",name:"Chicha Arôme Love",price:2000,note:""},
+{id:22,category:"Chichas",name:"Chicha Arôme Menthe",price:2000,note:""},
+{id:23,category:"Chichas",name:"Chicha Arôme Hawaï",price:2500,note:""},
+{id:24,category:"Chichas",name:"Chicha Arôme Pomme 🍏",price:2500,note:""},
+{id:25,category:"Champagnes",name:"JP Chenet / Piertant Cuvée",price:15000,note:""},
+{id:26,category:"Champagnes",name:"Bélaire Rosé",price:35000,note:""},
+{id:27,category:"Champagnes",name:"Veuve Clicquot / Moët & Chandon",price:65000,note:""},
+{id:28,category:"Champagnes",name:"Ruinart",price:100000,note:""},
+{id:29,category:"Whiskys",name:"Label 5",price:12000,note:""},
+{id:30,category:"Whiskys",name:"Red Label",price:18000,note:""},
+{id:31,category:"Whiskys",name:"Jack Daniel’s",price:30000,note:""},
+{id:32,category:"Whiskys",name:"Hennessy",price:40000,note:""},
+{id:33,category:"Bières",name:"Heineken / Savana / Guinness",price:1500,note:""},
+{id:34,category:"Bières",name:"Desperados",price:2000,note:""},
+{id:35,category:"Bières",name:"Vody / Rox / Coca / Youki",price:1000,note:""}
+];
+const money=n=>Number(n).toLocaleString("fr-FR")+" FCFA";
+let products=load("fallcave-products",INITIAL_PRODUCTS), cart={};
+let category="Tout";
+function load(key,fallback){try{const v=localStorage.getItem(key);return v?JSON.parse(v):JSON.parse(JSON.stringify(fallback))}catch{return JSON.parse(JSON.stringify(fallback))}}
+function save(){localStorage.setItem("fallcave-products",JSON.stringify(products))}
+function waLink(message="Bonjour FALL CAVE, je souhaite avoir des informations."){return "https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(message)}
+["header-wa","hero-wa","contact-wa","float-wa"].forEach(id=>document.getElementById(id).href=waLink());
+function renderFilters(){const cats=["Tout",...new Set(products.map(p=>p.category))];document.getElementById("filters").innerHTML=cats.map(c=>`<button class="filter ${category===c?'active':''}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{category=b.dataset.cat;renderFilters();renderProducts()})}
+function productCard(p){const pricePicker=p.minPrice&&p.maxPrice?`<label class="price-choice">Votre prix <select class="chosen-price" data-price-for="${p.id}" aria-label="Choisir le prix pour ${esc(p.name)}">${Array.from({length:Math.floor((p.maxPrice-p.minPrice)/500)+1},(_,i)=>p.minPrice+i*500).map(v=>`<option value="${v}" ${v===p.price?"selected":""}>${money(v)}</option>`).join("")}</select></label>`:"";return `<article class="product"><div class="category">${esc(p.category)}</div><h3>${esc(p.name)}</h3><div class="note">${esc(p.note||"")}</div>${pricePicker}<div class="product-bottom"><span class="price">${p.minPrice&&p.maxPrice?money(p.minPrice)+" – "+money(p.maxPrice):money(p.price)}</span><button class="add" data-add="${p.id}" aria-label="Ajouter ${esc(p.name)}">+</button></div></article>`}
+const CATEGORY_PHOTOS={
+"Pizzas":"https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=420&q=80",
+"Shawarmas":"https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=90",
+"Paninis":"https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=700&q=90",
+"Plats":"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=90",
+"Pâtes":"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=420&q=80",
+"Vins":"https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=420&q=80",
+"Chichas":"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=420&q=80",
+"Champagnes":"https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=420&q=80",
+"Whiskys":"https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=420&q=80",
+"Bières":"https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=420&q=80"
+};
+function renderProducts(){const cats=[...new Set(products.map(p=>p.category))];const shown=category==="Tout"?cats:[category];document.getElementById("products").innerHTML=shown.map(c=>{const list=products.filter(p=>p.category===c);const photo=CATEGORY_PHOTOS[c]||CATEGORY_PHOTOS["Plats"];return `<section class="category-section"><div class="category-heading"><img class="cat-photo" src="${photo}" alt="Photo de la catégorie ${esc(c)}" loading="lazy"><div class="cat-title"><h3>${esc(c)}</h3></div><span>${list.length} article${list.length>1?'s':''}</span></div><div class="category-items">${list.map(productCard).join("")}</div></section>`}).join("")||'<p class="muted">Aucun produit dans cette catégorie.</p>';document.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>{const id=b.dataset.add;const picker=document.querySelector(`[data-price-for="${id}"]`);const p=products.find(x=>String(x.id)===String(id));const chosen=picker?Number(picker.value):p.price;if(!cart[id])cart[id]={qty:0,price:chosen};if(cart[id].price!==chosen&&cart[id].qty>0){if(!confirm("Ce produit est déjà dans le panier à un autre prix. Remplacer son prix ?"))return;cart[id].price=chosen;}cart[id].qty++;cart[id].price=chosen;renderCart()})}
+function renderCart(){const entries=Object.entries(cart).filter(([id,item])=>item&&item.qty>0&&products.some(p=>String(p.id)===String(id)));const wrap=document.getElementById("cart-items");if(!entries.length)wrap.innerHTML='<p class="muted">Votre panier est vide.</p>';else wrap.innerHTML=entries.map(([id,item])=>{const p=products.find(x=>String(x.id)===String(id));return `<div class="cart-line"><div><strong>${esc(p.name)}</strong><div class="muted">${money(item.price)} × ${item.qty}</div></div><div>${money(item.price*item.qty)} <button data-minus="${id}">−</button> <button data-plus="${id}">+</button></div></div>`}).join("");const total=entries.reduce((s,[,item])=>s+item.price*item.qty,0);document.getElementById("cart-total").textContent=money(total);document.getElementById("cart-count").textContent=entries.reduce((s,[,item])=>s+item.qty,0);document.querySelectorAll("[data-minus]").forEach(b=>b.onclick=()=>{cart[b.dataset.minus].qty--;if(cart[b.dataset.minus].qty<=0)delete cart[b.dataset.minus];renderCart()});document.querySelectorAll("[data-plus]").forEach(b=>b.onclick=()=>{cart[b.dataset.plus].qty++;renderCart()})}
+const modeSelect=document.getElementById("order-mode");
+const addressInput=document.getElementById("delivery-address");
+const addressLabel=document.getElementById("address-label");
+const tableSelect=document.getElementById("table-number");
+const tableLabel=document.getElementById("table-label");
+// QR code individuel : le lien du site se termine par ?table=1, ?table=2, etc.
+const scannedTable=new URLSearchParams(window.location.search).get("table");
+if(scannedTable && /^(?:[1-9]|1[0-9]|20)$/.test(scannedTable)){
+  tableSelect.value=scannedTable; modeSelect.value="Sur place";
+  const notice=document.createElement("p"); notice.className="muted"; notice.textContent="Table "+scannedTable+" détectée grâce au QR code. Votre commande sera associée à cette table.";
+  tableSelect.insertAdjacentElement("afterend",notice);
+}
+function updateDeliveryFields(){const delivery=modeSelect.value==="À livrer";addressInput.style.display=delivery?"block":"none";addressLabel.style.display=delivery?"block":"none";addressInput.required=delivery;tableSelect.style.display=delivery?"none":"block";tableLabel.style.display=delivery?"none":"block";tableSelect.required=!delivery}
+modeSelect.addEventListener("change",updateDeliveryFields);updateDeliveryFields();
+function orderMessage(){const entries=Object.entries(cart).filter(([id,item])=>item&&item.qty>0&&products.some(p=>String(p.id)===String(id)));const mode=modeSelect.value;const address=addressInput.value.trim();const table=tableSelect.value;if(mode==="Sur place"&&!table)return "ERREUR : veuillez choisir votre numéro de table (1 à 20) avant de commander.";if(mode==="À livrer"&&!address)return "ERREUR : veuillez saisir votre adresse de livraison.";if(!entries.length)return "Bonjour FALL CAVE, je souhaite consulter la carte et connaître les disponibilités.\n\nMode souhaité : "+mode+(mode==="À livrer"?"\nAdresse de livraison : "+address:"\nNuméro de table : "+table);let total=0;const lines=entries.map(([id,item])=>{const p=products.find(x=>String(x.id)===String(id));total+=item.price*item.qty;return `• ${p.name} x${item.qty} — ${money(item.price)} l’unité = ${money(item.price*item.qty)}`});return "Bonjour FALL CAVE ! Je souhaite commander :\n\n"+lines.join("\n")+"\n\nTOTAL : "+money(total)+"\n\nMode : "+mode+(mode==="À livrer"?"\nAdresse de livraison : "+address:"\nNuméro de table : "+table)+"\n\nMerci de confirmer ma commande et les disponibilités."}
+document.getElementById("order-wa").onclick=()=>{const message=orderMessage();if(message.startsWith("ERREUR :")){alert(message);return}window.open(waLink(message),"_blank","noopener")};
+document.getElementById("clear-cart").onclick=()=>{cart={};renderCart()};
+document.getElementById("login").onclick=()=>{if(document.getElementById("pin").value==="2468"){document.getElementById("admin-login").hidden=true;document.getElementById("admin-panel").hidden=false;renderAdmin()}else alert("Code incorrect. Le code par défaut est 2468.")};
+document.getElementById("logout").onclick=()=>{document.getElementById("admin-login").hidden=false;document.getElementById("admin-panel").hidden=true;document.getElementById("pin").value=""};
+document.getElementById("add-product").onclick=()=>{const name=document.getElementById("new-name").value.trim(),price=Number(document.getElementById("new-price").value);if(!name||!Number.isFinite(price)||price<0){alert("Entrez un nom et un prix valide.");return}products.push({id:Date.now(),category:document.getElementById("new-category").value,name,price,note:document.getElementById("new-note").value.trim()});save();document.getElementById("new-name").value="";document.getElementById("new-price").value="";document.getElementById("new-note").value="";refreshAll();renderAdmin()};
+function renderAdmin(){document.getElementById("admin-list").innerHTML=products.map(p=>`<div class="admin-row"><span><strong>${esc(p.name)}</strong><br><small class="muted">${esc(p.category)}</small></span><input aria-label="Prix de ${esc(p.name)}" type="number" min="0" value="${p.price}" data-price="${p.id}" style="max-width:130px"><button class="btn outline" data-save="${p.id}">OK</button><button class="btn outline" data-delete="${p.id}">Supprimer</button></div>`).join("");document.querySelectorAll("[data-save]").forEach(b=>b.onclick=()=>{const id=b.dataset.save;const inp=document.querySelector(`[data-price="${id}"]`);const p=products.find(x=>String(x.id)===String(id));p.price=Math.max(0,Number(inp.value)||0);save();refreshAll();renderAdmin()});document.querySelectorAll("[data-delete]").forEach(b=>b.onclick=()=>{if(confirm("Supprimer ce produit ?")){products=products.filter(p=>String(p.id)!==String(b.dataset.delete));delete cart[b.dataset.delete];save();refreshAll();renderAdmin()}})}
+document.getElementById("export-json").onclick=()=>{const blob=new Blob([JSON.stringify(products,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="carte-fall-cave.json";a.click();URL.revokeObjectURL(a.href)};
+document.getElementById("reset-menu").onclick=()=>{if(confirm("Réinitialiser la carte initiale ?")){products=JSON.parse(JSON.stringify(INITIAL_PRODUCTS));save();refreshAll();renderAdmin()}};
+function refreshAll(){renderFilters();renderProducts();renderCart()}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+refreshAll();
+</script>
+</body>
+</html>

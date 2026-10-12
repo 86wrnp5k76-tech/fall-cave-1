@@ -1,0 +1,16 @@
+FALL CAVE — VERSION PROFESSIONNELLE
+
+Contenu :
+- Site de commande réorganisé en cartes compactes par catégorie.
+- Une photo est affichée uniquement dans l’en-tête de chaque catégorie, pas devant chaque produit.
+- Carte complète conservée : pizzas, shawarmas, paninis, plats, pâtes, vins, chichas, champagnes, whiskys et bières/boissons.
+- Panier, commande WhatsApp, choix livraison/sur place, adresse de livraison et espace admin (PIN par défaut : 2468).
+- 20 QR codes individuels dans le dossier QR_Tables, plus un PDF A4 prêt à imprimer.
+
+IMPORTANT POUR LES QR CODES
+Les QR codes pointent vers https://moonlit-babka-d90519.netlify.app/?table=N. Après avoir publié/remplacé le site sur cette adresse, chaque QR ouvre la carte avec la table correspondante présélectionnée et le mode « Sur place ». Vérifiez l’adresse du site avant impression si vous changez de domaine.
+
+Le numéro WhatsApp configuré est +229 01 97 74 07 32. Vérifiez-le avant la mise en ligne. Les modifications admin de cette version sont enregistrées dans le navigateur utilisé et ne se synchronisent pas automatiquement entre appareils.
+Les tarifs de Dakououn et Bomiwo restent à confirmer.
+
+Mise à jour : nouvelle photo d’entête cave à vins/chicha, photos de catégories shawarma, panini et plats (riz/aileron). Pour les pizzas (5 000–8 000 FCFA), shawarmas (1 500–2 500 FCFA), paninis (2 000–3 000 FCFA) et poisson frit (5 000–8 000 FCFA), le client choisit le prix avant l’ajout au panier.
