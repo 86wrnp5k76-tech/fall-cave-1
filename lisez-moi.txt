@@ -4,7 +4,7 @@ Contenu :
 - Site de commande réorganisé en cartes compactes par catégorie.
 - Une photo est affichée uniquement dans l’en-tête de chaque catégorie, pas devant chaque produit.
 - Carte complète conservée : pizzas, shawarmas, paninis, plats, pâtes, vins, chichas, champagnes, whiskys et bières/boissons.
-- Panier, commande WhatsApp, choix livraison/sur place, adresse de livraison et espace admin (PIN par défaut : 2468).
+- Panier, commande WhatsApp, choix livraison/sur place, adresse de livraison et espace admin (PIN par ).
 - 20 QR codes individuels dans le dossier QR_Tables, plus un PDF A4 prêt à imprimer.
 
 IMPORTANT POUR LES QR CODES
